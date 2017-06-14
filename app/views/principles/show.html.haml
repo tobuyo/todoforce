@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @principle.name
+%p
+  %strong Team:
+  = @principle.team_id
+%p
+  %strong Content:
+  = @principle.content
+%p
+  %strong Index:
+  = @principle.index
+%p
+  %strong Principle explain:
+  = @principle.principle_explain
+= link_to 'Edit', edit_principle_path(@principle)
+|
+= link_to 'Back', principles_path

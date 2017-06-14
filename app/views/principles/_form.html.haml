@@ -1,0 +1,26 @@
+= form_for(principle) do |f|
+  - if principle.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(principle.errors.count, "error")
+        prohibited this principle from being saved:
+      %ul
+        - principle.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :team_id
+    = f.number_field :team_id
+  .field
+    = f.label :content
+    = f.text_area :content
+  .field
+    = f.label :index
+    = f.number_field :index
+  .field
+    = f.label :principle_explain
+    = f.text_area :principle_explain
+  .actions
+    = f.submit
